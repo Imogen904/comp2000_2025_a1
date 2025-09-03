@@ -1,41 +1,32 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Stage {
   Grid grid;
-  Actor cat;
-  Actor dog;
-  Actor bird;
-  List<Actor> listOfActors;
+  List<Actor> actors;
 
   public Stage() {
     grid = new Grid();
-    cat = new Cat(grid.cellAtColRow(0, 0));
-    dog = new Dog(grid.cellAtColRow(0, 15));
-    bird = new Bird(grid.cellAtColRow(12, 9));
-    listOfActors = new ArrayList<>();
-    listOfActors.add(cat);
-    listOfActors.add(dog);
-    listOfActors.add(bird);
-
+    actors = new ArrayList<Actor>();
+    actors.add(new Cat(grid.cellAtColRow(0, 0).get()));
+    actors.add(new Dog(grid.cellAtColRow(0, 15).get()));
+    actors.add(new Bird(grid.cellAtColRow(12, 9).get()));    
   }
 
   public void paint(Graphics g, Point mouseLoc) {
     grid.paint(g, mouseLoc);
-    /*cat.paint(g);
-    dog.paint(g);
-    bird.paint(g);*/
-    
-    for(int i = 0; i < listOfActors.size(); i++) {
-      listOfActors.get(i).paint(g);
+    for(Actor a: actors) {
+      a.paint(g);
     }
-    Integer xpos = grid.cellAtPoint(mouseLoc).get().x;
-    Integer ypos = grid.cellAtPoint(mouseLoc).get().y;
-
-    g.drawString("X Position: " + xpos.toString(), 750, 200);
-    g.drawString("Y Position: " + ypos.toString(), 750, 250);
-
+    Optional<Cell> underMouse = grid.cellAtPoint(mouseLoc);
+    if(underMouse.isPresent()) {
+      Cell hoverCell = underMouse.get();
+      g.setColor(Color.DARK_GRAY);
+      g.drawString(String.valueOf(hoverCell.col) + String.valueOf(hoverCell.row), 740, 30);
+    }
   }
 }
