@@ -217,7 +217,7 @@ Discuss the following questions with your group:
   * For example, in last week's refactoring if we had left out `BotMover` would we have still implemented the Strategy Pattern, or
   * If we'd left out one or both of `Beat` and `Pulse` would we have implemented the Observer Pattern?
 
-* How much is enough?  Do the various parts of `Stage` that make use of `enum State` already constitute the State Pattern?
+* How much is enough?  Do the various parts of `Stage` that make use of `enum State` already constitute the State Pattern
 
 ### Task 18
 
