@@ -212,8 +212,8 @@ enum State {ChoosingActor, SelectingNewLocation, BotMoving}
 
 Discuss the following questions with your group:
 
-* Does a code component need to be implemented precisely according to the textbook definition to be called a design pattern?
-  * If not, how much of the textbook definition needs to be implemented for you to label something as a particular pattern?
+* Does a code component need to be implemented precisely according to the textbook definition to be called a design pattern? No, there's many ways to implement the design patterns.
+  * If not, how much of the textbook definition needs to be implemented for you to label something as a particular pattern? I feel like as long as the design has the basic structural elements of the pattern then it would count as using that design pattern.
   * For example, in last week's refactoring if we had left out `BotMover` would we have still implemented the Strategy Pattern, or
   * If we'd left out one or both of `Beat` and `Pulse` would we have implemented the Observer Pattern?
 
