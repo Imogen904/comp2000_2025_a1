@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BirdEnemy extends Enemy {
     public BirdEnemy(Cell inLoc) {
         loc = inLoc;
-        color = Color.RED;
+        color = new Color(255, 0, 0, 125);
         display = new ArrayList<Polygon>();
         
         Polygon wing1 = new Polygon();

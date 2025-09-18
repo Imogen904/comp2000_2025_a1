@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class CatEnemy extends Enemy {
     public CatEnemy(Cell inLoc) {
         loc = inLoc;
-        color = Color.RED;
+        color = new Color(255, 0, 0, 125);
         display = new ArrayList<Polygon>();
         
         Polygon ear1 = new Polygon();
