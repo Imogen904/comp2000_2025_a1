@@ -2,8 +2,9 @@ import java.awt.Color;
 import java.awt.Polygon;
 import java.util.ArrayList;
 
-public class DogEnemy extends Enemy {
+public class DogEnemy extends Enemy<Bone> {
     public DogEnemy(Cell inLoc) {
+        super(new Bone());
         loc = inLoc;
         color = new Color(255, 0, 0, 125);
         display = new ArrayList<Polygon>();

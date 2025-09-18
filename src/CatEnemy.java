@@ -2,8 +2,9 @@ import java.awt.Color;
 import java.awt.Polygon;
 import java.util.ArrayList;
 
-public class CatEnemy extends Enemy {
+public class CatEnemy extends Enemy<Fish> {
     public CatEnemy(Cell inLoc) {
+        super(new Fish());
         loc = inLoc;
         color = new Color(255, 0, 0, 125);
         display = new ArrayList<Polygon>();
