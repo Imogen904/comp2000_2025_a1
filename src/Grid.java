@@ -51,20 +51,4 @@ public class Grid {
     }
     return Optional.empty();
   }
-
-
-  public Optional<Cell> cellAtPoint(Point p){
-    if(p==null) {
-      return Optional.empty();
-    }
-    
-    for(int i = 0; i<cells.length; i++){
-      for(int j = 0; j<cells[i].length; j++){
-        if(cells[i][j].contains(p)) {
-          return Optional.of(cells[i][j]);
-        }
-      }
-    }
-    return Optional.empty();
-  }
 }
