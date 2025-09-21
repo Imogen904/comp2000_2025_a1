@@ -8,7 +8,7 @@ import java.util.Optional;
 public class Stage {
   Grid grid;
   List<Actor> actors;
-  List<Enemy> enemies;
+  List<Enemy<? extends Image>>  enemies;
 
   public Stage() {
     grid = new Grid();
@@ -16,7 +16,7 @@ public class Stage {
     actors.add(new Cat(grid.cellAtColRow(0, 0).get()));
     actors.add(new Dog(grid.cellAtColRow(0, 15).get()));
     actors.add(new Bird(grid.cellAtColRow(12, 9).get()));    
-    enemies = new ArrayList<Enemy>();
+    enemies = new ArrayList<Enemy<? extends Image>>();
     enemies.add(new DogEnemy(grid.cellAtColRow(4,12).get()));
     enemies.add(new CatEnemy(grid.cellAtColRow(10,7).get()));
     enemies.add(new BirdEnemy(grid.cellAtColRow(13,18).get()));
@@ -27,7 +27,7 @@ public class Stage {
     for(Actor a: actors) {
       a.paint(g);
     }
-    for(Enemy e: enemies) {
+    for(Enemy<? extends Image> e: enemies) {
       e.paint(g);
     }
     Optional<Cell> underMouse = grid.cellAtPoint(mouseLoc);
